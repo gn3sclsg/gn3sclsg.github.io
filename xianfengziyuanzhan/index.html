@@ -1,0 +1,1116 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>先锋资源站-中文影视与软件资源索引</title>
+<meta name="description" content="先锋资源站是面向中文用户的高清影视、软件工具与学习资料索引站点，按类型整理条目与版本信息，提供检索、筛选与体验说明，并标注转述、推测与待核对内容，便于判断后再取用。">
+<meta name="keywords" content="先锋资源站">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f2433'/%3E%3Cpath d='M18 46V18h10l14 18V18h6v28H38L24 28v18z' fill='%23f0a04b'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "先锋资源站",
+  "description": "中文影视、软件工具与学习资料的资源索引站点，按类型整理条目、版本信息与体验说明。",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "4K 影视资源索引里的版本标注怎么读？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "版本标注通常由分辨率、片源和音轨三段组成。以 2160p.WEB-DL.国语中字 为例，2160p 指分辨率，WEB-DL 指片源来自流媒体，国语中字指配音与字幕。片源不同，画面锐度与暗部细节差别明显，蓝光原盘重编码通常保留更多层次。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "开源软件与便携版资源怎么选？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "开源软件优先看许可协议与最后提交时间；便携版看是否附带配置目录与卸载说明。安装版写注册表、能随系统更新，便携版不写注册表、适合放在 U 盘里跨机器使用，二者取舍取决于是否需要长期维护。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "学习资料条目为什么标注整理日期？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "课程与文档会随版本修订，旧版目录与新版差异可能达到三分之一。标注整理日期便于判断内容对应哪一版教材或软件，2026 年 10 月的整理条目与 2024 年的同名条目在章节结构上常常对不上。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "资源条目的 sha256 校验值有什么用？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "校验值用于确认文件在传输中是否完整。下载完成后在命令行运行校验命令比对，值不一致说明文件损坏或被改动。校验值只证明文件一致，不证明内容合规，仍需自行确认授权范围。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "影视条目中的“转述”和“推测”标注意味着什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "转述指内容来自公开采访、发布会或官方说明；推测指编辑根据现有信息推断，尚无确证。看到推测标注时，应把它当作待核对的说法，而不是已经发生的事实。"
+      }
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --ink:#0f2433;
+  --ink-2:#1d3a4f;
+  --muted:#5a7186;
+  --line:#d4dfe7;
+  --line-strong:#a9bccb;
+  --bg:#f5f8fa;
+  --surface:#ffffff;
+  --surface-2:#eaf1f5;
+  --accent:#c96a1f;
+  --accent-soft:#f7e2cf;
+  --teal:#1f6f78;
+  --teal-soft:#d8ecee;
+  --ok:#2f7a4f;
+  --warn:#9a5b12;
+  --radius:10px;
+  --radius-lg:16px;
+  --shadow:0 1px 2px rgba(15,36,51,.06),0 6px 18px rgba(15,36,51,.06);
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --step:4px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--font);
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--teal);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{
+  outline:3px solid var(--accent);
+  outline-offset:2px;
+  border-radius:4px;
+}
+h1,h2,h3,h4{line-height:1.35;margin:0;color:var(--ink)}
+p{margin:0 0 12px}
+ul,ol{margin:0 0 12px;padding-left:22px}
+li{margin-bottom:6px}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:8px 14px;z-index:200}
+.skip:focus{left:8px;top:8px}
+
+/* 吸顶公告 + 页头 */
+.sticky-stack{position:sticky;top:0;z-index:80}
+.announce{
+  background:var(--ink);
+  color:#dbe7ee;
+  font-size:13.5px;
+  border-bottom:1px solid #274a60;
+}
+.announce .wrap{
+  display:flex;gap:14px;align-items:center;justify-content:space-between;
+  padding:7px 0;flex-wrap:wrap;
+}
+.announce b{color:#fff;font-weight:600}
+.announce .tag{
+  display:inline-block;background:var(--accent);color:#fff;font-size:12px;
+  padding:1px 8px;border-radius:999px;margin-right:8px;letter-spacing:.04em;
+}
+.announce a{color:#f0c79b;text-decoration:underline;text-underline-offset:3px}
+.announce .meta{color:#8fa9ba;font-size:12.5px}
+header.site{
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex;align-items:center;gap:18px;
+  padding:10px 0;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand svg{width:36px;height:36px;flex:none}
+.brand-text{display:flex;flex-direction:column;line-height:1.2}
+.brand-text .name{font-size:19px;font-weight:700;letter-spacing:.02em;color:var(--ink)}
+.brand-text .sub{font-size:11.5px;color:var(--muted);letter-spacing:.14em}
+nav.main-nav{flex:1 1 auto}
+nav.main-nav ul{
+  display:flex;gap:4px;list-style:none;margin:0;padding:0;flex-wrap:wrap;
+}
+nav.main-nav a{
+  display:inline-block;padding:7px 11px;border-radius:8px;
+  color:var(--ink-2);font-size:14.5px;
+}
+nav.main-nav a:hover{background:var(--surface-2);text-decoration:none}
+nav.main-nav a.active{background:var(--ink);color:#fff}
+.header-tools{display:flex;align-items:center;gap:10px;flex:none}
+.search-box{display:flex;align-items:center;border:1px solid var(--line-strong);border-radius:999px;background:#fff;overflow:hidden}
+.search-box input{
+  border:0;padding:7px 12px;font-size:14px;width:150px;font-family:inherit;color:var(--ink);
+  background:transparent;
+}
+.search-box input:focus{outline:none}
+.search-box button{
+  border:0;background:var(--ink);color:#fff;padding:8px 13px;font-size:13.5px;cursor:pointer;
+  font-family:inherit;
+}
+.search-box button:hover{background:var(--ink-2)}
+.menu-toggle{
+  display:none;border:1px solid var(--line-strong);background:#fff;color:var(--ink);
+  border-radius:8px;padding:7px 12px;font-size:14px;cursor:pointer;font-family:inherit;
+}
+.search-feedback{
+  font-size:13px;color:var(--muted);padding:0 0 8px;min-height:0;
+}
+.search-feedback.hit{color:var(--ok)}
+.search-feedback.miss{color:var(--accent)}
+
+/* 主布局 */
+main{padding:26px 0 40px}
+section.block{margin-bottom:38px;scroll-margin-top:132px}
+.block-head{
+  display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;
+  border-bottom:2px solid var(--line-strong);padding-bottom:8px;margin-bottom:18px;
+}
+.block-head h2{font-size:21px;letter-spacing:.01em}
+.block-head .note{font-size:13px;color:var(--muted)}
+.cols-2{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:34px;align-items:start}
+.cols-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.split{display:grid;grid-template-columns:1.25fr 1fr;gap:24px;align-items:start}
+
+/* 首屏 */
+.hero{
+  background:
+    radial-gradient(1000px 380px at 88% -10%,rgba(31,111,120,.16),transparent 60%),
+    radial-gradient(700px 300px at 6% 110%,rgba(201,106,31,.14),transparent 62%),
+    var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);
+  padding:30px 32px 26px;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:28px;
+  align-items:center;
+  overflow:hidden;
+}
+.hero .kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:.16em;color:var(--teal);
+  border:1px solid var(--teal);border-radius:999px;padding:3px 12px;margin-bottom:14px;
+}
+.hero h1{
+  font-size:clamp(28px,4vw,42px);
+  letter-spacing:.02em;
+  margin-bottom:12px;
+}
+.hero h1 .hl{
+  color:var(--accent);
+  border-bottom:3px solid var(--accent-soft);
+}
+.hero .lede{color:var(--ink-2);font-size:16.5px;max-width:46em}
+.hero-stats{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;margin:18px 0 20px;
+}
+.hero-stats div{
+  border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--bg);padding:10px 12px;
+}
+.hero-stats dt{font-size:12px;color:var(--muted);letter-spacing:.04em}
+.hero-stats dd{margin:2px 0 0;font-size:20px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.hero-stats dd small{font-size:12px;font-weight:400;color:var(--muted);margin-left:2px}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap}
+.btn{
+  display:inline-block;padding:10px 18px;border-radius:999px;font-size:15px;
+  border:1px solid transparent;font-family:inherit;cursor:pointer;
+}
+.btn-primary{background:var(--ink);color:#fff}
+.btn-primary:hover{background:var(--ink-2);text-decoration:none}
+.btn-ghost{background:#fff;color:var(--ink);border-color:var(--line-strong)}
+.btn-ghost:hover{border-color:var(--ink);text-decoration:none}
+.hero-art{position:relative}
+.hero-art svg{width:100%;height:auto;display:block}
+.hero-art .cap{
+  position:absolute;right:6px;bottom:4px;font-size:11.5px;color:var(--muted);
+  background:rgba(245,248,250,.86);padding:2px 8px;border-radius:6px;
+}
+
+/* 卡片 */
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px;box-shadow:var(--shadow);transition:transform .18s,border-color .18s;
+}
+.card:hover{transform:translateY(-3px);border-color:var(--line-strong)}
+.card h3{font-size:16px;margin-bottom:6px}
+.card .meta{font-size:12.5px;color:var(--muted);margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap}
+.card .meta span{background:var(--surface-2);border-radius:5px;padding:1px 7px}
+.card p{font-size:14.5px;color:var(--ink-2);margin-bottom:6px}
+.card .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.tag-min{
+  font-size:12px;color:var(--teal);background:var(--teal-soft);
+  border-radius:999px;padding:1px 9px;
+}
+.tag-min.alt{color:var(--warn);background:var(--accent-soft)}
+
+/* 紧凑列表 */
+.tight-list{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.tight-list li{
+  display:grid;grid-template-columns:78px minmax(0,1fr) auto;gap:12px;
+  padding:10px 4px;border-bottom:1px solid var(--line);margin:0;align-items:baseline;
+}
+.tight-list .t{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tight-list .n{font-size:15px}
+.tight-list .n b{font-weight:600}
+.tight-list .u{font-size:12px;color:var(--muted);white-space:nowrap}
+
+/* 编号步骤 */
+.steps{list-style:none;counter-reset:s;padding:0;margin:0;display:grid;gap:12px}
+.steps li{
+  counter-increment:s;position:relative;padding:12px 14px 12px 50px;margin:0;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  font-size:14.5px;color:var(--ink-2);
+}
+.steps li::before{
+  content:counter(s,decimal-leading-zero);
+  position:absolute;left:13px;top:12px;font-size:13px;font-weight:700;
+  color:var(--accent);font-variant-numeric:tabular-nums;
+  border-right:1px solid var(--line);padding-right:9px;
+}
+.steps li b{color:var(--ink)}
+
+/* 对照面板 */
+.compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff}
+.compare>div{padding:16px}
+.compare>div+div{border-left:1px solid var(--line)}
+.compare h3{font-size:15px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.compare h3 .dot{width:9px;height:9px;border-radius:50%;background:var(--teal);display:inline-block}
+.compare>div+div h3 .dot{background:var(--accent)}
+.compare ul{font-size:14px;color:var(--ink-2);margin:0;padding-left:18px}
+.compare table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:10px}
+.compare td{padding:5px 4px;border-top:1px dashed var(--line);vertical-align:top}
+.compare td:first-child{color:var(--muted);width:42%}
+
+/* 深度解析 */
+.article{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:24px 26px;box-shadow:var(--shadow)}
+.article h2{font-size:22px;margin-bottom:6px}
+.article .sub{color:var(--muted);font-size:13px;margin-bottom:16px}
+.article h3{font-size:17px;margin:22px 0 8px;padding-left:11px;border-left:4px solid var(--accent)}
+.article p{font-size:15.5px;color:var(--ink-2)}
+.article blockquote{
+  margin:18px 0;padding:14px 18px;background:var(--surface-2);
+  border-left:4px solid var(--teal);border-radius:0 var(--radius) var(--radius) 0;
+  font-size:15px;color:var(--ink);
+}
+.article blockquote cite{display:block;font-size:12.5px;color:var(--muted);font-style:normal;margin-top:6px}
+.claim{
+  border:1px dashed var(--line-strong);border-radius:var(--radius);
+  padding:12px 14px;margin:14px 0;background:#fcfdfe;font-size:14.5px;
+}
+.claim strong{color:var(--accent)}
+.rel-list{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+
+/* 侧栏 */
+aside{position:sticky;top:132px;display:grid;gap:16px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+.panel h3{font-size:14px;letter-spacing:.06em;color:var(--muted);font-weight:600;margin-bottom:10px;text-transform:uppercase}
+.side-nav{list-style:none;padding:0;margin:0;display:grid;gap:2px}
+.side-nav a{
+  display:block;font-size:14.5px;padding:6px 10px;border-radius:7px;color:var(--ink-2);
+  border-left:3px solid transparent;
+}
+.side-nav a:hover{background:var(--surface-2);text-decoration:none}
+.side-nav a.active{background:var(--surface-2);border-left-color:var(--accent);color:var(--ink);font-weight:600}
+.rank{list-style:none;padding:0;margin:0;counter-reset:r}
+.rank li{
+  counter-increment:r;display:grid;grid-template-columns:24px minmax(0,1fr);gap:8px;
+  padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px;margin:0;
+}
+.rank li:last-child{border-bottom:0}
+.rank li::before{
+  content:counter(r);font-weight:700;color:var(--accent);font-size:13px;
+  font-variant-numeric:tabular-nums;
+}
+.rank .desc{font-size:12.5px;color:var(--muted)}
+
+/* 时间线 */
+.timeline{list-style:none;padding:0;margin:0;border-left:2px solid var(--line-strong);margin-left:8px}
+.timeline li{position:relative;padding:0 0 16px 22px;margin:0;font-size:14.5px;color:var(--ink-2)}
+.timeline li::before{
+  content:"";position:absolute;left:-7px;top:10px;width:12px;height:12px;border-radius:50%;
+  background:#fff;border:3px solid var(--teal);
+}
+.timeline .when{display:block;font-size:12.5px;color:var(--accent);font-weight:600;margin-bottom:2px;font-variant-numeric:tabular-nums}
+
+/* FAQ */
+details.faq{
+  border:1px solid var(--line);border-radius:var(--radius);background:#fff;margin-bottom:10px;
+  overflow:hidden;
+}
+details.faq summary{
+  cursor:pointer;padding:13px 16px;font-size:15px;font-weight:600;color:var(--ink);
+  list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:baseline;
+}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"＋";color:var(--accent);font-weight:700;flex:none}
+details.faq[open] summary::after{content:"－"}
+details.faq[open] summary{border-bottom:1px solid var(--line);background:var(--surface-2)}
+details.faq .body{padding:12px 16px 14px;font-size:14.5px;color:var(--ink-2)}
+
+/* 评论 */
+.review{
+  border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:14px 16px;
+  display:grid;gap:6px;
+}
+.review .who{font-size:13px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;align-items:baseline}
+.review .who b{color:var(--ink);font-size:14px}
+.review .who .stars{color:var(--accent);letter-spacing:2px;font-size:12px}
+.review p{font-size:14.5px;margin:0;color:var(--ink-2)}
+.review .target{font-size:12.5px;color:var(--teal);background:var(--teal-soft);border-radius:5px;padding:1px 8px;justify-self:start}
+
+/* 标签索引 */
+.tag-index{display:flex;flex-wrap:wrap;gap:8px}
+.tag-index a{
+  font-size:13.5px;padding:5px 12px;border-radius:8px;background:#fff;
+  border:1px solid var(--line-strong);color:var(--ink-2);
+}
+.tag-index a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+
+/* 数据说明 */
+.note-box{
+  background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius);
+  padding:14px 16px;font-size:13.5px;color:var(--ink-2);
+}
+.note-box b{color:var(--ink)}
+
+/* 页尾 */
+footer.site{
+  background:var(--ink);color:#b9cbd8;padding:36px 0 22px;font-size:14px;
+}
+footer.site .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:26px;margin-bottom:26px}
+footer.site h4{color:#fff;font-size:14px;margin-bottom:10px;letter-spacing:.06em}
+footer.site a{color:#b9cbd8}
+footer.site a:hover{color:#fff}
+footer.site ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+footer.site .brandline{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+footer.site .brandline svg{width:30px;height:30px}
+footer.site .brandline span{color:#fff;font-size:17px;font-weight:700}
+footer.site .pos{color:#8fa9ba;font-size:13px;line-height:1.7}
+footer.site .bottom{
+  border-top:1px solid #274a60;padding-top:16px;display:flex;gap:12px;justify-content:space-between;
+  flex-wrap:wrap;font-size:12.5px;color:#8fa9ba;
+}
+footer.site .bottom a{color:#8fa9ba}
+
+/* 回到顶部 */
+#toTop{
+  position:fixed;right:18px;bottom:22px;z-index:90;
+  background:var(--ink);color:#fff;border:0;border-radius:999px;
+  width:46px;height:46px;font-size:19px;cursor:pointer;box-shadow:var(--shadow);
+  opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;
+}
+#toTop.show{opacity:1;pointer-events:auto}
+#toTop:hover{transform:translateY(-3px)}
+
+/* 平板 */
+@media (max-width:1000px){
+  .cols-2{grid-template-columns:1fr}
+  aside{position:static;grid-template-columns:repeat(2,minmax(0,1fr));order:2}
+  .cols-3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero{grid-template-columns:1fr;gap:16px;padding:24px}
+  .hero-art{max-width:420px}
+  footer.site .cols{grid-template-columns:1fr 1fr}
+  .split{grid-template-columns:1fr}
+}
+/* 手机 */
+@media (max-width:700px){
+  body{font-size:15.5px}
+  .menu-toggle{display:inline-block}
+  .header-inner{gap:10px}
+  nav.main-nav{order:3;flex-basis:100%;display:none}
+  nav.main-nav.open{display:block}
+  nav.main-nav ul{flex-direction:column;gap:2px;border-top:1px solid var(--line);padding-top:8px}
+  nav.main-nav a{display:block}
+  .header-tools{order:2;margin-left:auto}
+  .search-box input{width:112px}
+  .cols-3{grid-template-columns:1fr}
+  aside{grid-template-columns:1fr}
+  .compare{grid-template-columns:1fr}
+  .compare>div+div{border-left:0;border-top:1px solid var(--line)}
+  .tight-list li{grid-template-columns:66px minmax(0,1fr)}
+  .tight-list .u{display:none}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .article{padding:18px 16px}
+  footer.site .cols{grid-template-columns:1fr}
+  .announce .wrap{padding:6px 0}
+  .announce .meta{display:none}
+  #toTop{width:42px;height:42px;right:12px;bottom:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .card:hover,#toTop:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+
+<div class="sticky-stack">
+  <div class="announce">
+    <div class="wrap">
+      <p style="margin:0">
+        <span class="tag">更新</span>
+        <b>先锋资源站</b> 11 月 7 日新增 38 条索引：4K 修复版《雾港列车》2160p 重编码、PowerRename 3.2 便携版、数据结构课 2026 秋章节表。
+        <a href="/#latest">查看更新明细</a>
+      </p>
+      <span class="meta">索引条目 12 846 · 今日校验通过 96 条</span>
+    </div>
+  </div>
+
+  <header class="site">
+    <div class="wrap header-inner">
+      <a class="brand" href="/#" aria-label="先锋资源站首页">
+        <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#0f2433"/>
+          <path d="M18 46V18h10l14 18V18h6v28H38L24 28v18z" fill="#f0a04b"/>
+          <circle cx="48" cy="47" r="4" fill="#1f6f78"/>
+        </svg>
+        <span class="brand-text">
+          <span class="name">先锋资源站</span>
+          <span class="sub">RESOURCE INDEX</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">菜单</button>
+
+      <nav class="main-nav" id="mainNav" aria-label="主题导航">
+        <ul>
+          <li><a href="/#overview" class="active">领域概览</a></li>
+          <li><a href="/#picks">精选推荐</a></li>
+          <li><a href="/#latest">最新更新</a></li>
+          <li><a href="/#channels">分类入口</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <div class="search-box">
+          <input id="searchInput" type="search" placeholder="搜影视、软件、课程" aria-label="站内本地搜索">
+          <button id="searchBtn" type="button">查找</button>
+        </div>
+      </div>
+    </div>
+    <div class="wrap"><p class="search-feedback" id="searchFeedback" role="status" aria-live="polite"></p></div>
+  </header>
+</div>
+
+<main id="main">
+  <div class="wrap">
+
+    <!-- 首屏 -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <div>
+        <span class="kicker">资源索引 · 2026 年 11 月</span>
+        <h1 id="heroTitle">先锋资源站</h1>
+        <p class="lede" style="margin-top:10px">把散在论坛、网盘和发布帖里的高清影视、桌面软件、公开课与电子文档，按类型、版本、字幕和校验值整理成可检索的条目。每条记录写清来源渠道、整理日期和已知问题，先判断再取用。</p>
+        <dl class="hero-stats">
+          <div><dt>索引条目</dt><dd>12 846<small>条</small></dd></div>
+          <div><dt>本月新增</dt><dd>1 137<small>条</small></dd></div>
+          <div><dt>校验通过率</dt><dd>97.2<small>%</small></dd></div>
+        </dl>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="/#picks">看本周精选条目</a>
+          <a class="btn btn-ghost" href="/#guide">读版本判断指南</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <svg viewBox="0 0 420 320" role="img" aria-label="资源索引结构示意图：三层档案格与检索路径">
+          <defs>
+            <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#eaf1f5"/>
+              <stop offset="1" stop-color="#d8ecee"/>
+            </linearGradient>
+          </defs>
+          <rect x="4" y="6" width="412" height="308" rx="18" fill="url(#hg)" stroke="#a9bccb"/>
+          <g stroke="#a9bccb" stroke-width="1.3" fill="#ffffff">
+            <rect x="30" y="36" width="176" height="52" rx="8"/>
+            <rect x="218" y="36" width="172" height="52" rx="8"/>
+            <rect x="30" y="100" width="110" height="52" rx="8"/>
+            <rect x="152" y="100" width="110" height="52" rx="8"/>
+            <rect x="274" y="100" width="116" height="52" rx="8"/>
+          </g>
+          <g fill="#5a7186" font-family="PingFang SC,Microsoft YaHei,sans-serif" font-size="13">
+            <text x="46" y="58">影视 · 2160p</text>
+            <text x="234" y="58">软件 · 便携版</text>
+            <text x="46" y="122">公开课</text>
+            <text x="168" y="122">电子文档</text>
+            <text x="290" y="122">字体素材</text>
+          </g>
+          <g stroke="#a9bccb" stroke-width="1.3" fill="none">
+            <path d="M118 88v12M207 88v12M118 152v18h180v-18"/>
+          </g>
+          <rect x="30" y="176" width="360" height="104" rx="10" fill="#ffffff" stroke="#a9bccb"/>
+          <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+            <text x="48" y="204" font-size="13" fill="#0f2433" font-weight="700">检索路径</text>
+            <text x="48" y="228" font-size="12" fill="#5a7186">类型 → 版本 → 字幕 / 许可 → 校验值</text>
+            <text x="48" y="252" font-size="12" fill="#c96a1f">标注：事实 / 转述 / 推测 / 待核对</text>
+            <circle cx="352" cy="228" r="6" fill="#1f6f78"/>
+            <circle cx="352" cy="252" r="6" fill="#c96a1f"/>
+          </g>
+        </svg>
+        <span class="cap">索引结构示意</span>
+      </div>
+    </section>
+
+    <!-- 领域概览 -->
+    <section class="block" id="overview" aria-labelledby="h-overview">
+      <div class="block-head">
+        <h2 id="h-overview">领域概览：一条资源记录由哪些字段构成</h2>
+        <span class="note">字段规范自 2026 年 10 月 12 日统一，覆盖全部条目</span>
+      </div>
+      <div class="split">
+        <div>
+          <p>一条可用的索引记录至少要写清六件事：文件类型、来源渠道、版本号或分辨率、发布或整理日期、已知缺陷、校验值。缺任何一项，后续判断都会变慢。以 4K 影视为例，同一部片存在蓝光原盘重编码、流媒体 WEB-DL、以及二次压缩三套文件，体积从 8 GB 到 60 GB 不等，画质和字幕匹配度也不同。</p>
+          <p>桌面软件的情况更复杂。<b>PowerRename 3.2</b> 在 10 月 28 日发布便携版，配置目录会跟随程序存放，不需要写注册表；同名的安装版则需要管理员权限，并会随系统升级重置设置。两类文件在索引里分列，避免误装。公开课与电子文档多了一个版本日期字段，2026 秋目录与 2024 版章节数相差约 12 节。</p>
+        </div>
+        <div class="note-box">
+          <p style="margin-bottom:8px"><b>字段分级</b></p>
+          <ul style="margin:0">
+            <li><b>事实</b>：可对照发布帖原文、官方页面或文件信息核对。</li>
+            <li><b>转述</b>：来自采访、发布会或二手整理，附出处日期。</li>
+            <li><b>推测</b>：根据版本号、文件体积推断，明确标为待核对。</li>
+            <li><b>待核对</b>：编辑尚未取得原始文件，条目暂不开放下载指引。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 精选推荐 -->
+    <section class="block" id="picks" aria-labelledby="h-picks">
+      <div class="block-head">
+        <h2 id="h-picks">精选内容推荐：本周被反复打开的 6 条</h2>
+        <span class="note">按 11 月 1 日至 11 月 7 日的条目点击与收藏综合排序</span>
+      </div>
+      <div class="cols-3">
+        <article class="card">
+          <h3>雾港列车：2160p 重编码修复版</h3>
+          <div class="meta"><span>电影</span><span>2026-11-06</span><span>HDR10</span></div>
+          <p>片源为 10 月流媒体上线版本，重编码后体积 24.6 GB，暗部噪点比流媒体直出少，字幕轨含简繁两条。</p>
+          <div class="tags"><span class="tag-min">4K 影视资源索引</span><span class="tag-min alt">已校验</span></div>
+        </article>
+        <article class="card">
+          <h3>PowerRename 3.2 便携版</h3>
+          <div class="meta"><span>软件</span><span>2026-10-28</span><span>MIT</span></div>
+          <p>批量重命名工具，正则替换支持命名分组。便携版解压即用，配置写入同目录 config.ini，不碰注册表。</p>
+          <div class="tags"><span class="tag-min">Windows 软件便携版</span></div>
+        </article>
+        <article class="card">
+          <h3>数据结构与算法 2026 秋公开课</h3>
+          <div class="meta"><span>公开课</span><span>2026-10-30</span><span>36 讲</span></div>
+          <p>含 18 份作业与 6 套期中题库，章节按图论、动态规划、字符串排序重排，与 2024 版顺序不同。</p>
+          <div class="tags"><span class="tag-min">公开课字幕资源</span></div>
+        </article>
+        <article class="card">
+          <h3>版式设计中的中文断行规则</h3>
+          <div class="meta"><span>电子文档</span><span>2026-10-22</span><span>PDF 84 页</span></div>
+          <p>讲避头尾、标点挤压和行距阶梯，附 9 组对比排版，适合做书籍内页的人对照检查。</p>
+          <div class="tags"><span class="tag-min">中文排版资料下载</span></div>
+        </article>
+        <article class="card">
+          <h3>《长夜档案》纪录片全 8 集</h3>
+          <div class="meta"><span>剧集</span><span>2026-11-03</span><span>1080p</span></div>
+          <p>每集约 48 分钟，含采访原声与中英双字幕。第 5 集片头有 12 秒音画不同步，条目内已写修复方法。</p>
+          <div class="tags"><span class="tag-min alt">已知瑕疵</span></div>
+        </article>
+        <article class="card">
+          <h3>开源字体思源宋体 2.003 补丁版</h3>
+          <div class="meta"><span>字体</span><span>2026-10-25</span><span>OFL</span></div>
+          <p>修正了 2.001 版在竖排标点上的位置偏移，行高参数没变，可直接替换旧文件。</p>
+          <div class="tags"><span class="tag-min">开源字体下载</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 最新更新 -->
+    <section class="block" id="latest" aria-labelledby="h-latest">
+      <div class="block-head">
+        <h2 id="h-latest">最新更新：11 月 6 日至 11 月 8 日的条目变动</h2>
+        <span class="note">时间均为北京时间，条目变动含新增、修订与下架</span>
+      </div>
+      <ul class="tight-list">
+        <li><span class="t">今天 09:12</span><span class="n"><b>新增</b>《雾港列车》2160p 重编码（24.6 GB），附简繁字幕与 sha256</span><span class="u">影视</span></li>
+        <li><span class="t">今天 08:40</span><span class="n"><b>修订</b> PowerRename 3.2 便携版：补充 /S 静默安装参数说明，更正配置目录路径</span><span class="u">软件</span></li>
+        <li><span class="t">昨天 21:05</span><span class="n"><b>新增</b>《长夜档案》第 5 集音画不同步修复偏移值 -320ms</span><span class="u">剧集</span></li>
+        <li><span class="t">昨天 17:33</span><span class="n"><b>修订</b> 数据结构公开课 2026 秋：补上第 19 讲作业缺失的测试用例 4 组</span><span class="u">公开课</span></li>
+        <li><span class="t">11-06 14:20</span><span class="n"><b>下架</b> 某网盘直链条目 3 条，原因：分享链接失效 7 天未恢复</span><span class="u">索引</span></li>
+        <li><span class="t">11-06 10:48</span><span class="n"><b>新增</b> 思源宋体 2.003 补丁版，附 2.001 与 2.003 标点位置对比图</span><span class="u">字体</span></li>
+      </ul>
+    </section>
+
+    <!-- 分类入口 -->
+    <section class="block" id="channels" aria-labelledby="h-channels">
+      <div class="block-head">
+        <h2 id="h-channels">分类入口：按使用场景找条目</h2>
+        <span class="note">10 个频道，鼠标与键盘均可进入</span>
+      </div>
+      <div class="tag-index">
+        <a href="/#picks">4K 影视资源索引</a>
+        <a href="/#picks">蓝光原盘重编码</a>
+        <a href="/#picks">纪录片中英双字幕</a>
+        <a href="/#picks">Windows 软件便携版</a>
+        <a href="/#picks">批量重命名工具</a>
+        <a href="/#picks">开源字体下载</a>
+        <a href="/#picks">公开课字幕资源</a>
+        <a href="/#deep">老片修复版本对比</a>
+        <a href="/#guide">文件校验与解压</a>
+        <a href="/#latest">索引修订日志</a>
+      </div>
+    </section>
+
+    <div class="cols-2">
+      <div>
+        <!-- 深度解析 -->
+        <section class="block" id="deep" aria-labelledby="h-deep">
+          <div class="article">
+            <h2 id="h-deep">深度解析：重编码的 4K 版本真比流媒体直出更值得保存吗</h2>
+            <p class="sub">结论建立在 2026 年 10 月三段片源对比与两条社区反馈之上，可被反驳。</p>
+
+            <p>先说判断：对多数只在 27 英寸显示器上看片的人来说，24.6 GB 的重编码版并不比 6.8 GB 的流媒体直出版本明显更好，差别主要体现在暗部层次和 400% 放大后的噪点，而不在整体锐度。理由是两者都来自同一份 2160p 母版，重编码只是换了编码参数和码率，不会凭空长出细节。</p>
+
+            <h3>三段片源的实际差异</h3>
+            <p>10 月 18 日流媒体上线版本码率约 15 Mbps；10 月 24 日出现的重编码版升到 28 Mbps，容器从 MP4 换成 MKV；10 月 30 日另一组发布者放出 4K 修复版，标注体积 41 GB，实际检测为二次放大。第三组文件用 MediaInfo 查看分辨率确为 3840×2160，但编码器写入的原始分辨率为 1920×1080，放大倍率 2 倍，暗部细节反而不如第一组。</p>
+
+            <div class="claim">
+              <strong>可核对结构</strong>
+              <table style="width:100%;border-collapse:collapse;font-size:14px;margin-top:8px">
+                <tr><td style="padding:6px 4px;border-top:1px solid #d4dfe7;color:#5a7186">第一组 6.8 GB</td><td style="padding:6px 4px;border-top:1px solid #d4dfe7">码率 15 Mbps，暗部有轻微色带</td></tr>
+                <tr><td style="padding:6px 4px;border-top:1px solid #d4dfe7;color:#5a7186">第二组 24.6 GB</td><td style="padding:6px 4px;border-top:1px solid #d4dfe7">码率 28 Mbps，色带消失，字幕轨完整</td></tr>
+                <tr><td style="padding:6px 4px;border-top:1px solid #d4dfe7;color:#5a7186">第三组 41 GB</td><td style="padding:6px 4px;border-top:1px solid #d4dfe7">原始分辨率 1080p，放大 2 倍，纹理发糊</td></tr>
+              </table>
+            </div>
+
+            <h3>社区说法不一致的地方</h3>
+            <p>10 月 31 日，发布者在帖子中称第三组为“院线数字版重制”，并附上一张对比截图。11 月 2 日，另一位用户在回复里贴出 MediaInfo 截图，指出编码器字段写的是 AVC 而非 HEVC，且码率曲线在静态镜头明显塌陷。发布者 11 月 3 日回应“截图来自预告片”，但没有撤回文件。这件事目前只有两边帖文，属于各执一词，索引里暂标为“说法差异待核对”。</p>
+
+            <blockquote>
+              同一份 2160p 母版转出来的两个文件，体积差 3.6 倍，屏幕上的差别却要在暂停、放大、调暗的环境里才看得出来。
+              <cite>—— 2026 年 11 月 4 日，一位做影视压制 6 年的用户在该条目下的回复，转述自其公开发言</cite>
+            </blockquote>
+
+            <h3>保存建议与它的边界</h3>
+            <p>如果目标是长期保存，选码率 28 Mbps 左右、字幕轨完整、附 sha256 的那一版即可，不必追 40 GB 以上的数字。这个建议有边界：用投影或 65 英寸以上电视观看时，暗部色带更容易被看到，第二组与第一组的差距会放大；而在手机屏幕上，三组几乎无法区分。把判断拆成“屏幕尺寸 + 是否暂停放大 + 是否长期保存”三项再决定，比记一个体积数字更可靠。</p>
+
+            <div class="rel-list">
+              <span class="tag-min">4K 影视资源索引</span>
+              <span class="tag-min">蓝光原盘重编码</span>
+              <span class="tag-min alt">说法差异待核对</span>
+              <span class="tag-min">老片修复版本对比</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 体验指南 -->
+        <section class="block" id="guide" aria-labelledby="h-guide">
+          <div class="block-head">
+            <h2 id="h-guide">体验指南：从检索到校验的五步</h2>
+            <span class="note">以下步骤在 Windows 11 与 macOS 15 上均验证过</span>
+          </div>
+          <ol class="steps">
+            <li><b>缩窄类型。</b>先用频道名限定范围，比如只看“公开课字幕资源”或“Windows 软件便携版”，再输入版本号或年份。搜索框对条目标题和标签做本地匹配，不联网。</li>
+            <li><b>读版本字段。</b>影视条目看分辨率、片源、音轨三段；软件条目看版本号、许可协议、安装方式；文档条目看整理日期和页数。</li>
+            <li><b>看已知缺陷。</b>条目内标注的瑕疵比“推荐”更有用。《长夜档案》第 5 集音画不同步偏移 -320ms，照条目给出的数值调字幕延迟即可。</li>
+            <li><b>比对校验值。</b>下载完成后运行 <code>sha256sum 文件名</code>（macOS 用 <code>shasum -a 256</code>），与条目里给出的值比对。不一致就重新下载，不要解压。</li>
+            <li><b>确认授权范围。</b>校验值只证明文件完整，不证明可以任意分发。开源软件看 LICENSE 文件，影视与课程看发布方声明，字体看 OFL 或商业授权条款。</li>
+          </ol>
+        </section>
+
+        <!-- 对照面板 -->
+        <section class="block" id="compare" aria-labelledby="h-compare">
+          <div class="block-head">
+            <h2 id="h-compare">版本对照：安装版与便携版的取舍</h2>
+            <span class="note">以 10 月 28 日发布的 PowerRename 3.2 两个分发版本为例</span>
+          </div>
+          <div class="compare">
+            <div>
+              <h3><span class="dot"></span>安装版 3.2</h3>
+              <ul>
+                <li>写入注册表，随系统更新自动获得新版本</li>
+                <li>需要管理员权限，首次安装约 42 MB</li>
+                <li>配置存于用户目录，重装系统后丢失</li>
+                <li>适合固定一台电脑长期使用</li>
+              </ul>
+            </div>
+            <div>
+              <h3><span class="dot"></span>便携版 3.2</h3>
+              <ul>
+                <li>解压即用，配置写入同目录 config.ini</li>
+                <li>体积 38 MB，可放 U 盘跨机器使用</li>
+                <li>不会自动更新，需手动替换目录</li>
+                <li>适合临时机器或需要带走配置的场景</li>
+              </ul>
+            </div>
+            <div style="grid-column:1/-1;border-top:1px solid var(--line)">
+              <table>
+                <tr><td>启动速度（冷启动）</td><td>安装版 0.8 秒 / 便携版 1.1 秒，差异主要来自文件缓存</td></tr>
+                <tr><td>正则替换兼容性</td><td>两版一致，均支持命名分组与大小写开关</td></tr>
+                <tr><td>卸载残留</td><td>安装版残留注册表项 11 条；便携版删除目录即结束</td></tr>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="block" id="faq" aria-labelledby="h-faq">
+          <div class="block-head">
+            <h2 id="h-faq">常见问题</h2>
+            <span class="note">答案针对具体条目与操作，不涉及站点介绍</span>
+          </div>
+
+          <details class="faq">
+            <summary>4K 影视资源索引里的版本标注怎么读？</summary>
+            <div class="body">版本标注通常由分辨率、片源和音轨三段组成。以 <b>2160p.WEB-DL.国语中字</b> 为例，2160p 指分辨率，WEB-DL 指片源来自流媒体，国语中字指配音与字幕。片源不同，画面锐度与暗部细节差别明显，蓝光原盘重编码通常保留更多层次。</div>
+          </details>
+
+          <details class="faq">
+            <summary>开源软件与便携版资源怎么选？</summary>
+            <div class="body">开源软件优先看许可协议与最后提交时间；便携版看是否附带配置目录与卸载说明。安装版写注册表、能随系统更新，便携版不写注册表、适合放在 U 盘里跨机器使用，二者取舍取决于是否需要长期维护。</div>
+          </details>
+
+          <details class="faq">
+            <summary>学习资料条目为什么标注整理日期？</summary>
+            <div class="body">课程与文档会随版本修订，旧版目录与新版差异可能达到三分之一。标注整理日期便于判断内容对应哪一版教材或软件，2026 年 10 月的整理条目与 2024 年的同名条目在章节结构上常常对不上。</div>
+          </details>
+
+          <details class="faq">
+            <summary>资源条目的 sha256 校验值有什么用？</summary>
+            <div class="body">校验值用于确认文件在传输中是否完整。下载完成后在命令行运行校验命令比对，值不一致说明文件损坏或被改动。校验值只证明文件一致，不证明内容合规，仍需自行确认授权范围。</div>
+          </details>
+
+          <details class="faq">
+            <summary>影视条目中的“转述”和“推测”标注意味着什么？</summary>
+            <div class="body">转述指内容来自公开采访、发布会或官方说明；推测指编辑根据现有信息推断，尚无确证。看到推测标注时，应把它当作待核对的说法，而不是已经发生的事实。</div>
+          </details>
+        </section>
+
+        <!-- 用户评论 -->
+        <section class="block" id="reviews" aria-labelledby="h-reviews">
+          <div class="block-head">
+            <h2 id="h-reviews">用户评论：来自 11 月 3 日至 11 月 7 日的条目留言</h2>
+            <span class="note">保留原文语气，中性、吐槽与肯定并存</span>
+          </div>
+          <div class="cols-3">
+            <div class="review">
+              <div class="who"><b>压制老周</b><span>11-07</span><span class="stars">★★★★☆</span></div>
+              <span class="target">《雾港列车》2160p 重编码</span>
+              <p>24.6 GB 这一版色带确实压干净了，第 37 分钟夜戏对比流媒体直出能看出来。就是字幕时间轴整体早了 0.4 秒，得自己拉一下。</p>
+            </div>
+            <div class="review">
+              <div class="who"><b>田七不甜</b><span>11-06</span><span class="stars">★★★☆☆</span></div>
+              <span class="target">PowerRename 3.2 便携版</span>
+              <p>功能没得说，正则分组很好用。但便携版解压后 config.ini 是空的，得先手动改一次编码，默认 UTF-8 读中文文件名不会乱。</p>
+            </div>
+            <div class="review">
+              <div class="who"><b>晚课九点</b><span>11-05</span><span class="stars">★★☆☆☆</span></div>
+              <span class="target">《长夜档案》第 5 集</span>
+              <p>音画不同步这条要是没写进条目，我大概会当成播放器问题折腾半小时。扣分是冲着文件本身，不是冲索引。</p>
+            </div>
+            <div class="review">
+              <div class="who"><b>排版小林</b><span>11-04</span><span class="stars">★★★★★</span></div>
+              <span class="target">中文断行规则 PDF</span>
+              <p>第 3 章的标点挤压对照表直接能用，9 组例子把避头尾讲清楚了。84 页里有两页是重复的索引页，不影响阅读。</p>
+            </div>
+            <div class="review">
+              <div class="who"><b>阿泽</b><span>11-04</span><span class="stars">★★★☆☆</span></div>
+              <span class="target">数据结构公开课 2026 秋</span>
+              <p>第 19 讲作业补了测试用例之后能跑通了。不过 2024 版的讲次顺序更顺，这一版把图论提到前面，前两周有点跟不上。</p>
+            </div>
+            <div class="review">
+              <div class="who"><b>字库观察</b><span>11-03</span><span class="stars">★★★★☆</span></div>
+              <span class="target">思源宋体 2.003 补丁版</span>
+              <p>竖排标点位置修好了，替换旧文件后行高没有变化。只是字重 900 的竖排逗号还是偏左一点点，等下一版。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 相关资讯 -->
+        <section class="block" id="news" aria-labelledby="h-news">
+          <div class="block-head">
+            <h2 id="h-news">相关资讯：影响条目取用的三条动态</h2>
+            <span class="note">事实与推测分开标注，附日期与出处</span>
+          </div>
+          <ul class="tight-list">
+            <li><span class="t">11-05</span><span class="n"><b>网盘直链策略调整</b>：某主流网盘自 11 月 5 日起对大于 20 GB 的分享文件加提取码，索引里的旧直链需重新获取。<span style="color:var(--muted)">（事实，源自平台公告）</span></span><span class="u">索引</span></li>
+            <li><span class="t">11-03</span><span class="n"><b>编码器 x265 4.1</b> 在 10 月 31 日提交了新码率控制补丁，社区推测下一批重编码在同码率下暗部会更好。<span style="color:var(--muted)">（推测，尚无对比样本）</span></span><span class="u">影视</span></li>
+            <li><span class="t">11-02</span><span class="n"><b>OFL 字体授权</b>：思源宋体维护方重申 2.003 版仍按 OFL 1.1 分发，允许嵌入与再分发，不得单独售卖字体文件。<span style="color:var(--muted)">（转述，源自项目页面）</span></span><span class="u">字体</span></li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- 侧栏 -->
+      <aside aria-label="侧栏导航与榜单">
+        <div class="panel">
+          <h3>栏目导航</h3>
+          <ul class="side-nav" id="sideNav">
+            <li><a href="/#overview">领域概览</a></li>
+            <li><a href="/#picks">精选内容推荐</a></li>
+            <li><a href="/#latest">最新更新</a></li>
+            <li><a href="/#channels">分类入口</a></li>
+            <li><a href="/#deep">深度解析</a></li>
+            <li><a href="/#guide">体验指南</a></li>
+            <li><a href="/#compare">版本对照</a></li>
+            <li><a href="/#faq">常见问题</a></li>
+            <li><a href="/#reviews">用户评论</a></li>
+            <li><a href="/#news">相关资讯</a></li>
+            <li><a href="/#recommend">相关推荐</a></li>
+            <li><a href="/#timeline">修订时间线</a></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>本周收藏榜</h3>
+          <ol class="rank">
+            <li><div>《雾港列车》2160p 重编码<div class="desc">24.6 GB，附 sha256</div></div></li>
+            <li><div>PowerRename 3.2 便携版<div class="desc">38 MB，配置随目录</div></div></li>
+            <li><div>数据结构公开课 2026 秋<div class="desc">36 讲，18 份作业</div></div></li>
+            <li><div>思源宋体 2.003 补丁版<div class="desc">修正竖排标点</div></div></li>
+            <li><div>中文断行规则 PDF<div class="desc">84 页，9 组对照</div></div></li>
+          </ol>
+        </div>
+      </aside>
+    </div>
+
+    <!-- 相关推荐 -->
+    <section class="block" id="recommend" aria-labelledby="h-recommend">
+      <div class="block-head">
+        <h2 id="h-recommend">相关推荐：和当前条目常被一起查看的内容</h2>
+        <span class="note">按条目共现关系排列，非点击量排序</span>
+      </div>
+      <div class="tag-index">
+        <a href="/#picks">蓝光原盘重编码鉴别</a>
+        <a href="/#deep">4K 修复版放大痕迹</a>
+        <a href="/#guide">MKV 字幕轨提取</a>
+        <a href="/#compare">便携版与安装版迁移</a>
+        <a href="/#picks">批量重命名命名分组</a>
+        <a href="/#picks">公开课字幕对齐工具</a>
+        <a href="/#guide">sha256 校验命令速查</a>
+        <a href="/#picks">OFL 字体嵌入规则</a>
+        <a href="/#picks">竖排标点位置检查</a>
+      </div>
+    </section>
+
+    <!-- 时间线 -->
+    <section class="block" id="timeline" aria-labelledby="h-timeline">
+      <div class="block-head">
+        <h2 id="h-timeline">修订时间线：索引规则近一个月的调整</h2>
+        <span class="note">页尾更新时间对应此列表最后一条</span>
+      </div>
+      <ol class="timeline">
+        <li><span class="when">2026-11-07</span>新增“说法差异待核对”标注，《雾港列车》第三组文件首先使用，附两边帖文日期。</li>
+        <li><span class="when">2026-11-01</span>影视条目字段从五行扩到六行，单列“已知缺陷”，此前瑕疵写在备注里。</li>
+        <li><span class="when">2026-10-25</span>字体类条目开始记录许可协议版本，OFL 1.1 与商业授权分开列出。</li>
+        <li><span class="when">2026-10-18</span>软件条目区分安装版与便携版，两版分别给校验值，不再合并成一条。</li>
+        <li><span class="when">2026-10-12</span>字段规范统一：文件类型、来源渠道、版本号、日期、缺陷、校验值六项为必填。</li>
+      </ol>
+    </section>
+
+    <!-- 补充板块：可信度分层 -->
+    <section class="block" id="trust" aria-labelledby="h-trust">
+      <div class="block-head">
+        <h2 id="h-trust">条目可信度分层：三类标注怎么用</h2>
+        <span class="note">分层只说明信息来源状态，不评价内容好坏</span>
+      </div>
+      <div class="cols-3">
+        <div class="card">
+          <h3>已核对</h3>
+          <div class="meta"><span>可对照原始文件</span></div>
+          <p>有 MediaInfo 截图、sha256 值或官方页面存档。11 月 7 日的《雾港列车》条目属于这一类，体积与编码参数都能复现。</p>
+        </div>
+        <div class="card">
+          <h3>转述待补</h3>
+          <div class="meta"><span>来源可查，原始文件缺</span></div>
+          <p>内容来自发布会或采访，但编辑未取得文件。x265 4.1 码率补丁的条目停在这一层，等对比样本。</p>
+        </div>
+        <div class="card">
+          <h3>说法差异待核对</h3>
+          <div class="meta"><span>双方各执一词</span></div>
+          <p>发布者与质疑者给出不同说法，日期与原文都保留。《雾港列车》第三组文件的“院线数字版重制”说法停在这一层。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 互动栏目 -->
+    <section class="block" id="interact" aria-labelledby="h-interact">
+      <div class="block-head">
+        <h2 id="h-interact">条目纠错与补充</h2>
+        <span class="note">两个互动栏目，留言按提交时间排列</span>
+      </div>
+      <div class="split">
+        <div class="note-box">
+          <p><b>最近三条纠错</b></p>
+          <ul style="margin:0">
+            <li>11-07 用户“压制老周”指出《雾港列车》字幕整体早 0.4 秒，编辑已在条目内补上偏移值。</li>
+            <li>11-06 用户“田七不甜”提醒便携版 config.ini 需手动改编码，条目说明已更新。</li>
+            <li>11-04 用户“排版小林”报告 PDF 有两页重复索引页，标注为已知瑕疵。</li>
+          </ul>
+        </div>
+        <div class="note-box">
+          <p><b>可以补充什么</b></p>
+          <p style="margin-bottom:0">版本号、文件体积、校验值、片源与字幕轨信息、已知缺陷的具体时间点。补充时请附上 MediaInfo 截图或文件属性截图，没有截图的说法会先进入“说法差异待核对”。</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="brandline">
+          <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1d3a4f"/>
+            <path d="M18 46V18h10l14 18V18h6v28H38L24 28v18z" fill="#f0a04b"/>
+            <circle cx="48" cy="47" r="4" fill="#d8ecee"/>
+          </svg>
+          <span>先锋资源站</span>
+        </div>
+        <p class="pos">按类型、版本与校验值整理条目，把转述、推测和待核对内容分开标注，方便先判断再取用。</p>
+      </div>
+      <div>
+        <h4>内容频道</h4>
+        <ul>
+          <li><a href="/#picks">4K 影视资源索引</a></li>
+          <li><a href="/#picks">Windows 软件便携版</a></li>
+          <li><a href="/#picks">公开课字幕资源</a></li>
+          <li><a href="/#picks">开源字体下载</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>使用帮助</h4>
+        <ul>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#compare">版本对照</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#interact">条目纠错</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>数据说明</h4>
+        <p style="margin:0 0 8px;font-size:13px;color:#8fa9ba">条目中的片名、软件名、课程名与版本号均为示例数据，用于演示索引字段结构；校验值与体积按示例填写，请勿直接当作真实文件信息使用。</p>
+        <p style="margin:0;font-size:13px;color:#8fa9ba">更新时间 2026-11-08，对应修订时间线最后一条。</p>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 先锋资源站 · 索引示例内容，版权归各自权利方所有</span>
+      <span><a href="/#overview">字段规范</a> · <a href="/#timeline">修订日志</a> · <a href="/#trust">可信度分层</a></span>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var menuBtn = document.getElementById('menuToggle');
+  var nav = document.getElementById('mainNav');
+  menuBtn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A' && window.innerWidth <= 700){
+      nav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded','false');
+    }
+  });
+
+  var input = document.getElementById('searchInput');
+  var btn = document.getElementById('searchBtn');
+  var feedback = document.getElementById('searchFeedback');
+  var searchable = Array.prototype.slice.call(document.querySelectorAll('h2, h3, .card, .tight-list li, .review, summary, .tag-index a, .timeline li'));
+
+  function doSearch(){
+    var q = input.value.trim().toLowerCase();
+    if(!q){
+      feedback.textContent = '';
+      feedback.className = 'search-feedback';
+      return;
+    }
+    var hit = searchable.filter(function(el){
+      return el.textContent.toLowerCase().indexOf(q) !== -1;
+    });
+    if(hit.length){
+      feedback.textContent = '找到 ' + hit.length + ' 处匹配，首条：' + hit[0].textContent.trim().slice(0,36) + '…';
+      feedback.className = 'search-feedback hit';
+      var target = hit[0].closest('section') || hit[0];
+      if(target && target.id){ location.hash = '#' + target.id; }
+    }else{
+      feedback.textContent = '没有匹配“' + input.value.trim() + '”的条目，试试片名、软件版本号或频道名。';
+      feedback.className = 'search-feedback miss';
+    }
+  }
+  btn.addEventListener('click', doSearch);
+  input.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); doSearch(); }
+  });
+
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 480){ toTop.classList.add('show'); }
+    else{ toTop.classList.remove('show'); }
+  }, {passive:true});
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // 滚动高亮
+  var sideLinks = Array.prototype.slice.call(document.querySelectorAll('#sideNav a'));
+  var sections = sideLinks.map(function(a){
+    var id = a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  }).filter(Boolean);
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('#mainNav a'));
+
+  function syncActive(){
+    var pos = window.scrollY + 150;
+    var current = sections[0];
+    sections.forEach(function(sec){
+      if(sec.offsetTop <= pos){ current = sec; }
+    });
+    sideLinks.forEach(function(a){
+      var id = a.getAttribute('href').replace('/#','');
+      if(current && a.getAttribute('href').replace('/#','') === current.id){
+        a.classList.add('active');
+      }else{
+        a.classList.remove('active');
+      }
+    });
+    navLinks.forEach(function(a){
+      var id = a.getAttribute('href').replace('/#','');
+      if(current && id === current.id){ a.classList.add('active'); }
+      else{ a.classList.remove('active'); }
+    });
+  }
+  window.addEventListener('scroll', syncActive, {passive:true});
+  syncActive();
+})();
+</script>
+</body>
+                  </html>
